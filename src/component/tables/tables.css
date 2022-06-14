@@ -1,0 +1,18 @@
+table{
+    margin-top: 25px;
+    width:100%;
+}
+table,td,th{
+    border:1px darkgray;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th, td{
+    width:50px;
+    padding: 10px;
+}
+
+.userB{
+    margin-right: 20px;
+}

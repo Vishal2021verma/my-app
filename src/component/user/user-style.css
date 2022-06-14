@@ -1,0 +1,21 @@
+.main-div{
+    margin-top: 150px;
+    padding: 25px;
+    width: 50%;
+    border:1px solid darkgray;
+    background-color: rgb(244, 244, 244);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.headAdd{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.table-div{
+    width:100%;
+}
