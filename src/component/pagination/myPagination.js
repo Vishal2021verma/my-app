@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NewRow from "../tables/newRow"
+import "../tables/tables.css"
 
 const Pagination = ({ data,itemDelete,updateData, pageLimit, dataLimit }) => {
   const [pages] = useState(Math.round(data.length / dataLimit));
@@ -28,8 +29,17 @@ const Pagination = ({ data,itemDelete,updateData, pageLimit, dataLimit }) => {
 
   return (
     <div>
-      
-        {getPaginatedData().map((userItem, index) => (
+       <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      {getPaginatedData().map((userItem, index) => (
           <NewRow 
           key={index}
           id={index}
@@ -40,6 +50,10 @@ const Pagination = ({ data,itemDelete,updateData, pageLimit, dataLimit }) => {
           onUpdate={updateData}
           />
         ))}
+        
+      </tbody>
+    </table>
+        
 
 
       {/* show the pagiantion

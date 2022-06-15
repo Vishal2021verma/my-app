@@ -1,13 +1,11 @@
 import react, { useState } from "react";
-import Tables from "../tables/tables";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import AddUser from "./adduser";
 import "./user-style.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Pagination from "../pagination/myPagination";
 
-function Users() {
+function Users() { 
 
   const [modalShow, setModalShow] = react.useState(false);
   //main userdata variable hook
@@ -41,6 +39,8 @@ function Users() {
   function hideModal (){
     setModalShow(false);
   }
+
+  const pageNum = Math.ceil(data.length / 5);
 
   //modal function
   function MyVerticallyCenteredModal(props) {
@@ -84,7 +84,16 @@ function Users() {
       </div>
       <div className="table-div">
         {data.length > 0 ? (
-          <Tables userInfo={data} itemDelete={deleteItem} updateData={updateData}/>
+          <>
+          <Pagination 
+          data={data}
+          itemDelete={deleteItem}
+          updateData={updateData}
+          pageLimit={pageNum}
+          dataLimit={5}
+          />
+          </>
+          // <Tables userInfo={data} itemDelete={deleteItem} updateData={updateData}/>
         ): (<h4 style={{color:"darkgrey"}}>No Data</h4>)}
       </div>
     </div>
