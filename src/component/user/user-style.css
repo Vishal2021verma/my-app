@@ -18,6 +18,7 @@
 }
 .table-div{
     width:100%;
+    text-align: center;
 }
 .error{
     color: red;

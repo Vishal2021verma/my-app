@@ -2,8 +2,10 @@
 // import Table from "react-bootstrap/Table";
 import NewRow from "./newRow";
 import './tables.css';
+import Pagination from "../pagination/myPagination";
 
 const Tables = (props) => {
+  const pageNum = Math.ceil(props.userInfo.length / 5);
   return (
     <table>
       <thead>
@@ -15,7 +17,17 @@ const Tables = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.userInfo.map((userItem, index) => {
+        {props.userInfo.length > 5 ?(
+          <>
+          <Pagination 
+          data={props.userInfo}
+          itemDelete={props.itemDelete}
+          updateData={props.updateData}
+          pageLimit={pageNum}
+          dataLimit={5}
+          />
+          </>
+        ) : (props.userInfo.map((userItem, index) => {
           return (
            <NewRow 
            key={index}
@@ -27,7 +39,9 @@ const Tables = (props) => {
            onUpdate={props.updateData}
            />
           );
-        })}
+        })) }
+
+        {/* { */}
       </tbody>
     </table>
   );

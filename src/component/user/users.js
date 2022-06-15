@@ -83,7 +83,9 @@ function Users() {
         </div>
       </div>
       <div className="table-div">
-        <Tables userInfo={data} itemDelete={deleteItem} updateData={updateData}/>
+        {data.length > 0 ? (
+          <Tables userInfo={data} itemDelete={deleteItem} updateData={updateData}/>
+        ): (<h4 style={{color:"darkgrey"}}>No Data</h4>)}
       </div>
     </div>
   );
