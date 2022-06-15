@@ -69,11 +69,9 @@ function Users() {
   return (
     <div className="main-div">
       <div className="headAdd">
-
         <div>
           <h2>Users</h2>
         </div>
-
         <div>
           <Button variant="primary" onClick={() => setModalShow(true)}>
             + Add User
